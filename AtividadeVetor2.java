@@ -8,34 +8,35 @@ public class AtividadeVetor2 {
 
 		Scanner lerScanner = new Scanner(System.in);
 
-		int vetorInteiros = 10;
+		int vetorInteiros[] = new int[10];
+		int soma = 0;
+		double media = 0.0f;
 
 		System.out.println("\nDigite 10 números inteiros de sua escolha: ");
 		for (int i = 0; i < 10; i++) {
-			vetorInteiros = lerScanner.nextInt();
-		}
-		System.out.println("\nOs elementos pares são:\n");
-		for (int i = 0; i < 10; i++) {
-			if (vetorInteiros % 2 == 0)
-				System.out.println("Numeros pares são: " + i + vetorInteiros);
+			vetorInteiros[i] = lerScanner.nextInt();
 		}
 		System.out.println("\nOs elementos ímpares são:\n");
-		for (int i = 1; i < 10; i += 2) {
-			System.out.println("Numeros ímpares" + i + vetorInteiros);
-break;
+		for (int i = 1; i < 10; i++) {
+			if (!(i % 2 == 0)) {
+				System.out.print(" " + vetorInteiros[i]);
+			}
 		}
-	
 
-	int soma = 0;
-	for(int i = 0; i < 10; i++) {
-	
-		soma += vetorInteiros;
-				System.out.println ("Soma:" + soma);	
-	
-		int media = soma / 10;
-		System.out.println("Media:" + media );
-		
+		System.out.println("\nOs elementos pares são:\n");
+		for (int i = 0; i < 10; i++) {
+			if (vetorInteiros[i] % 2 == 0)
+				System.out.println("Numeros pares são: " + vetorInteiros[i]);
+		}
+
+		for (int i = 0; i < 10; i++) {
+
+			soma += vetorInteiros[i];
+
+		}
+		media = (double) soma / 10;
+		System.out.printf("Media: %.2f\n", media);
+		System.out.println("Soma:" + soma);
 		lerScanner.close();
 	}
-}
 }
